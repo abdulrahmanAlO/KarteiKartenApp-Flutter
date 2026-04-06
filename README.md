@@ -10,3 +10,5 @@ Dies ist ein Flutter-Projekt, gestartet an der FH Aachen.
 ## Projektdateien
 
 Hier werden die Flutter-Dateien für das Final-Projekt hochgeladen.
+
+## Bitte Lesen Sie das Dossier-Dokument, um Überblick zu bekommen
