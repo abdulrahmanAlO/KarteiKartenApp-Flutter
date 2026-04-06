@@ -148,7 +148,7 @@ class _Quizpage extends State<Quizpage> {
     } else if (_answerEditingController.text == "") {
       return;
     }
-   await  UserServices.InsertQuiz(
+    await UserServices.InsertQuiz(
       widget.karteId,
       _quitionEditingController.text,
       extractedOptions,
@@ -181,12 +181,14 @@ class _Quizpage extends State<Quizpage> {
                   icon: const Icon(Icons.stop_circle),
                   onPressed: () async {
                     extractControllerToString(Options);
-                   
-                    Navigator.pop(context); // nur, wenn du wirklich den aktuellen Screen schließen willst
-                     reloadList();
+
+                    Navigator.pop(
+                      context,
+                    ); // nur, wenn du wirklich den aktuellen Screen schließen willst
+                    reloadList();
                   },
                 ),
-            
+
                 const SizedBox(height: 16),
 
                 IconButton(
@@ -197,21 +199,18 @@ class _Quizpage extends State<Quizpage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("Quiz is Empty")),
                       );
-                    }else{
-                       ScaffoldMessenger.of(context).showSnackBar(
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("Quiz is removed")),
                       );
                       // nur, wenn du wirklich den aktuellen Screen schließen willst
-
                     }
-                     Navigator.pop(context);
+                    Navigator.pop(context);
                     reloadList();
                   },
                   icon: Icon(Icons.delete),
                 ),
               ],
-
-       
             )
           : AppBar(title: const Text('Quiz')),
       body: widget.rolle == true
@@ -223,7 +222,7 @@ class _Quizpage extends State<Quizpage> {
                   TextField(
                     controller: _quitionEditingController,
                     decoration: InputDecoration(
-                      labelText: "quiton",
+                      labelText: "Question",
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -254,7 +253,7 @@ class _Quizpage extends State<Quizpage> {
                   TextField(
                     controller: _answerEditingController,
                     decoration: InputDecoration(
-                      labelText: "wich one is correct? ",
+                      labelText: "which one is correct? ",
                       border: OutlineInputBorder(),
                     ),
                   ),

@@ -175,7 +175,7 @@ class UserServices {
     }
   }
 
-  static Future<void> updateSubjctsRelated(
+  static Future<void> updateSubjctsRelated( //
     int id,
     String name,
     String tabelle,

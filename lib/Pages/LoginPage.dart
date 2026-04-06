@@ -339,7 +339,7 @@ class _AdditionalFieldsDialogState extends State<_AdditionalFieldsDialog> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
-              'Zusätzliche Informationen',
+              'additional Informations',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -365,7 +365,7 @@ class _AdditionalFieldsDialogState extends State<_AdditionalFieldsDialog> {
                     DropdownButtonFormField<String>(
                       initialValue: selectedRole,
                       decoration: InputDecoration(
-                        labelText: 'Rolle wählen',
+                        labelText: 'select Rolle',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -381,7 +381,7 @@ class _AdditionalFieldsDialogState extends State<_AdditionalFieldsDialog> {
                     DropdownButtonFormField<String>(
                       initialValue: selectedUniversity,
                       decoration: InputDecoration(
-                        labelText: 'Universität wählen',
+                        labelText: 'select University',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -413,7 +413,7 @@ class _AdditionalFieldsDialogState extends State<_AdditionalFieldsDialog> {
                     DropdownButtonFormField<String>(
                       initialValue: selectedProgram,
                       decoration: InputDecoration(
-                        labelText: 'Studiengang wählen',
+                        labelText: 'select Program',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -452,7 +452,7 @@ class _AdditionalFieldsDialogState extends State<_AdditionalFieldsDialog> {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              child: const Text('Weiter'),
+              child: const Text('next'),
             ),
           ],
         ),

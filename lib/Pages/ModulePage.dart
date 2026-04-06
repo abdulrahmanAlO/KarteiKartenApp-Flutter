@@ -18,7 +18,7 @@ class ModulePage extends StatefulWidget {
 class _ModulePage extends State<ModulePage>
     with SingleTickerProviderStateMixin {
   //Variablen:
- 
+
   PostgrestList? Studiengang = List.empty();
   PostgrestList? StudiengangUI = List.empty();
   PostgrestList? Module = List.empty();
@@ -121,11 +121,10 @@ class _ModulePage extends State<ModulePage>
       Module = [];
     }
     if (_user?["IsLecturer"]) {
-     
       studentsRelatedLecturer = await UserServices.loadallStudentsRelatedDozent(
         _user?["Programm_id"],
       );
-    } 
+    }
 
     reloadList();
   }
@@ -185,23 +184,20 @@ class _ModulePage extends State<ModulePage>
                               StudiengangUI?[0]["id"],
                               StudnetId!,
                             );
-                             Navigator.pop(context, true);
+                            Navigator.pop(context, true);
                             _LecturerLoadModuleRelatedStudent(StudnetId!);
-                            return ;
+                            return;
                           } else {
                             await UserServices.insertSubject(
                               thema.description,
                               StudiengangUI?[0]["id"],
                               _user?["id"],
                             );
-                              Navigator.pop(context, true);
+                            Navigator.pop(context, true);
                             _loadUI();
-                            return ;
+                            return;
                           }
-                         
                         }
-
-                       
                       },
                     ),
                   ],
@@ -260,9 +256,15 @@ class _ModulePage extends State<ModulePage>
                         await UserServices.updateSubjctsRelated(
                           modul["id"],
                           card.description,
-                          "Theme",
+                          "modules",
                         );
+
                         Navigator.pop(context, true);
+                        if (_user?["IsLecturer"] == true && StudnetId != null) {
+                          _LecturerLoadModuleRelatedStudent(StudnetId!);
+                        } else {
+                          _loadModul();
+                        }
                         reloadList();
                       },
                     ),
@@ -386,7 +388,9 @@ class _ModulePage extends State<ModulePage>
                                     } else {
                                       _loadModul();
                                     }
+                                  reloadList();
                                   },
+                                      
                                   icon: const Icon(Icons.delete),
                                   tooltip: 'Delete',
                                   color: Colors.red,
